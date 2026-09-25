@@ -74,7 +74,6 @@ export function FitLogProvider({ children }) {
     }
 
     setSaved((current) => [...current, workout]);
-
     toast.success("Workout saved for later");
   };
 
@@ -117,6 +116,7 @@ export function FitLogProvider({ children }) {
       value={{
         plan,
         saved,
+        hydrated,
         addToPlan,
         saveWorkout,
         removeFromPlan,
