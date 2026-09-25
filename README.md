@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FitLog
 
-## Getting Started
+FitLog is a responsive workout library and workout planning website built with Next.js. Users can browse workouts from an API, open dynamic workout detail pages, add workouts to today's plan, save workouts for later, and manage their workout list.
 
-First, run the development server:
+## Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- Context API
+- React Hot Toast
+- Lucide React
+- FitLog REST API
+- localStorage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Responsive workout library for desktop, tablet, and mobile.
+2. Dynamic workout details pages using Next.js App Router.
+3. Add workouts to Today's Plan with a five-workout limit.
+4. Save workouts for later.
+5. My Plan page with Exercises, Minutes, and Calories metrics.
+6. Mark workouts as done and remove planned workouts.
+7. Search and sort workouts by duration, calories, or rating.
+8. localStorage persistence for plan and saved workouts.
+9. Toast notifications for workout actions.
+10. Custom 404 page and loading state.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## API
 
-## Learn More
+All workout data:
 
-To learn more about Next.js, take a look at the following resources:
+https://api.abcz.workers.dev/api/fitlog
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Single workout:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+https://api.abcz.workers.dev/api/fitlog/:id
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/` - Next.js routes and pages
+- `components/` - reusable UI components
+- `context/` - global FitLog state
+- `lib/` - API utilities
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+FitLog Assignment Project
