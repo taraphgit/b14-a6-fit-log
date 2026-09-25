@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { Dumbbell } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useFitLog } from "@/context/FitLogContext";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { plan, saved } = useFitLog();
 
   const workoutActive =
     pathname === "/" || pathname.startsWith("/workouts");
@@ -15,7 +17,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#090909]/95 backdrop-blur-md">
       <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#ccff00] text-black">
             <Dumbbell size={21} strokeWidth={2.5} />
@@ -26,7 +27,6 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Navigation */}
         <nav className="hidden items-center gap-2 md:flex">
           <Link
             href="/#library"
@@ -51,20 +51,19 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Counters */}
         <div className="flex items-center gap-2">
           <Link
             href="/my-plan"
             className="rounded-full bg-[#ccff00] px-3 py-2 text-xs font-black uppercase tracking-wider text-black transition hover:scale-105"
           >
-            Plan 0
+            Plan {plan.length}
           </Link>
 
           <Link
             href="/my-plan"
             className="rounded-full border border-white/40 px-3 py-2 text-xs font-black uppercase tracking-wider text-white transition hover:border-white"
           >
-            Saved 0
+            Saved {saved.length}
           </Link>
         </div>
       </div>

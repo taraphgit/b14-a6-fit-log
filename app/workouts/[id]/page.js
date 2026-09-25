@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, Clock3, Flame, Star, Dumbbell } from "lucide-react";
+import { ArrowLeft, Clock3, Flame, Star } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getWorkoutById } from "@/lib/api";
+import WorkoutActions from "@/components/WorkoutActions";
 
 export default async function WorkoutDetailsPage({ params }) {
   const { id } = await params;
@@ -126,22 +127,7 @@ export default async function WorkoutDetailsPage({ params }) {
               </ol>
             </div>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ccff00] px-5 py-4 text-sm font-black uppercase tracking-wider text-black transition hover:opacity-90"
-              >
-                <Dumbbell size={18} />
-                Add to today&apos;s plan
-              </button>
-
-              <button
-                type="button"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-5 py-4 text-sm font-black uppercase tracking-wider text-white transition hover:border-white"
-              >
-                Save for later
-              </button>
-            </div>
+            <WorkoutActions workout={workout} />
           </div>
         </div>
       </section>
